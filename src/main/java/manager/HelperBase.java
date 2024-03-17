@@ -1,6 +1,8 @@
 package manager;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class HelperBase {
 
@@ -8,5 +10,27 @@ public class HelperBase {
 
     public HelperBase(WebDriver wd) {
         this.wd = wd;
+    }
+
+    public void click(By locator){
+        wd.findElement(locator).click();
+    }
+
+    public void type(By locator, String text){
+        WebElement el = wd.findElement(locator);
+                el.click();
+                el.clear();
+                if (text!=null){
+                    el.sendKeys(text);
+                }
+
+    }
+
+    public void pause(int time){
+        try {
+            Thread.sleep(time);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
