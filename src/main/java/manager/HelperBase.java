@@ -42,4 +42,13 @@ public class HelperBase {
 
         return wd.findElements(locator).size()>0;
     }
+
+    public boolean isYallaButtonNotActive() {
+        boolean res = isElementPresent(By.cssSelector("button[disabled]"));
+
+        WebElement el = wd.findElement(By.cssSelector("button[type='submit']"));
+        boolean result = el.isEnabled();
+
+        return res && !result;
+    }
 }
