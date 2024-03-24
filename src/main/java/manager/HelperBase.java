@@ -51,4 +51,8 @@ public class HelperBase {
 
         return res && !result;
     }
+
+    public void submit() {
+        click(By.xpath("//button[@type='submit']"));
+    }
 }
