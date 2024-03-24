@@ -36,7 +36,7 @@ public class RegistrationTests extends TestBase{
                 .withPassword("Snow123456$");
         app.getHelperUser().openRegistrationForm();
         app.getHelperUser().fillRegistrationForm(user);
-        app.getHelperUser().checkPolicy();
+        app.getHelperUser().checkPolicyXY();
         app.getHelperUser().submit();
         Assert.assertEquals(app.getHelperUser().getMessage(),"You are logged in success");
 
