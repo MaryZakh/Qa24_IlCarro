@@ -1,6 +1,7 @@
 package manager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -22,9 +23,16 @@ public class HelperBase {
         WebElement el = wd.findElement(locator);
                 el.click();
                 el.clear();
+                clearNew(el);
                 if (text!=null){
                     el.sendKeys(text);
                 }
+
+    }
+
+    public void clearNew(WebElement element){
+        element.sendKeys(" ");
+        element.sendKeys(Keys.BACK_SPACE);
 
     }
 

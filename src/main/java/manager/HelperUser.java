@@ -73,17 +73,19 @@ public class HelperUser extends HelperBase {
         js.executeScript("document.querySelector('#terms-of-use').click()");
     }
 
-    public void checkPolicyXY(){
-        Dimension size = wd.manage().window().getSize();
-        System.out.println("Wight screen-->"+size.getWidth());
+    public void checkPolicyXY() {
+        if (!wd.findElement(By.id("terms-of-use")).isSelected()) {
+            Dimension size = wd.manage().window().getSize();
+            System.out.println("Wight screen-->" + size.getWidth());
 
-        WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
-        Rectangle rect = label.getRect();
-        int w = rect.getWidth();
-        Actions actions = new Actions(wd);
-        int xOffSet = -w/2;
+            WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
+            Rectangle rect = label.getRect();
+            int w = rect.getWidth();
+            Actions actions = new Actions(wd);
+            int xOffSet = -w / 2;
 
-        actions.moveToElement(label,xOffSet,0).click().release().perform();
+            actions.moveToElement(label, xOffSet, 0).click().release().perform();
+        }
     }
 
     public void login(User user) {
