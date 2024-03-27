@@ -26,13 +26,7 @@ public class HelperUser extends HelperBase {
 
 
 
-    public String getMessage() {
-//        WebElement el = wd.findElement(By.cssSelector(".dialog-container>h2"));
-//        String text = el.getText();
-//        return text;
-        //pause(5000);
-        return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
-    }
+
 
     public void clickOkButton() {
         if (isElementPresent(By.xpath("//button[text()='Ok']")))

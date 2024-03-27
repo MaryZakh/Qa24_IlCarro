@@ -36,6 +36,13 @@ public class HelperBase {
 
     }
 
+    public String getMessage() {
+//        WebElement el = wd.findElement(By.cssSelector(".dialog-container>h2"));
+//        String text = el.getText();
+//        return text;
+        //pause(5000);
+        return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
+    }
     public void pause(int time){
         try {
             Thread.sleep(time);

@@ -43,4 +43,12 @@ public class HelperCar extends HelperBase{
         type(By.id("pickUpPlace"),location);
         click(By.cssSelector("div.pac-item"));
     }
+
+    public void returnToHome() {
+        click(By.xpath("//button[text()='Search cars']"));
+    }
+
+    public void attachPhoto(String link) {
+        wd.findElement(By.cssSelector("#photos")).sendKeys(link);
+    }
 }
