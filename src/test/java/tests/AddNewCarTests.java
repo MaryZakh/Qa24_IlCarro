@@ -15,6 +15,8 @@ public class AddNewCarTests extends TestBase {
             app.getHelperUser().login(new User()
                     .withEmail("margo@gmail.com")
                     .withPassword("Mmar123456$"));
+            logger.info("Logout complete");
+
         }
     }
 
@@ -33,6 +35,7 @@ public class AddNewCarTests extends TestBase {
                 .price(50)
                 .about("Nice Car")
                 .build();
+        logger.info("Test start with test data --->" + car.toString());
         app.getHelperCar().openCarForm();
         app.getHelperCar().fillCarForm(car);
         app.getHelperCar().attachPhoto("D:\\Qa_24\\Qa24_IlCarro\\2017_Lamborghini_Huracan_LP610.jpg");
@@ -56,6 +59,7 @@ public class AddNewCarTests extends TestBase {
                 .carRegNumber("453-333-" + i)
                 .price(50)
                 .build();
+        logger.info("Test start with test data --->" + car.toString());
         app.getHelperCar().openCarForm();
         app.getHelperCar().fillCarForm(car);
         app.getHelperCar().submit();
