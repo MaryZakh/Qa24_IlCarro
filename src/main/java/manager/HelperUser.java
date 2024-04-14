@@ -41,9 +41,7 @@ public class HelperUser extends HelperBase {
         click(By.xpath("//*[.=' Logout ']"));
     }
 
-    public String getErrorText() {
-        return wd.findElement(By.cssSelector("div.error")).getText();
-    }
+
 
 
     ///**************Registration***********
